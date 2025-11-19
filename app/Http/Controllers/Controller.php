@@ -19,4 +19,15 @@ class Controller extends BaseController
     public function show(){
         return view('controller.index');
     }
+
+    public function submit(){
+        $name = request("nom");
+        $password = request("password");
+        $commentaire = request("commentaire");
+        return view('controller.index',[
+            "name" => $name ,
+            "password" => $password ,
+            "commentaire" => $commentaire
+        ]);
+    }
 }

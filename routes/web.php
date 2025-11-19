@@ -18,7 +18,7 @@ use App\Http\Controllers\FormController;
 Route::get('/',  function () {
     return view('index');
 });
-
+/*
 Route::post('/submit', function () {
     $name = request("nom");
     $password = request("password");
@@ -28,7 +28,8 @@ Route::post('/submit', function () {
         "password" => $password ,
         "commentaire" => $commentaire
     ]);
-});
+});*/
 
 //Utiliser un controller pour gérer le routage
-Route::resource("controller",Controller::class);
+Route::get("/controller", [Controller::class, "index"])->name("controller.index");
+Route::post("/controller/submit", [Controller::class, "submit"])->name("controller.submit");

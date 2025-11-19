@@ -1,7 +1,8 @@
 <div class="container">
     <h1>Formulaire Laravel</h1>
 
-    <form method="post" action="submit">
+    <form method="post" action="{{route("controller.submit")}}">
+        @csrf
         <div class="form-group">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" class="form-control">
