@@ -22,11 +22,11 @@ class Controller extends BaseController
 
     public function submit(){
         $name = request("nom");
-        $password = request("password");
+        $password = password_hash(request("password"),PASSWORD_DEFAULT);
         $commentaire = request("commentaire");
         return view('controller.index',[
             "name" => $name ,
-            "password" => $password ,
+            "password" => $password,
             "commentaire" => $commentaire
         ]);
     }
