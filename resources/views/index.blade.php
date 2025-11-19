@@ -22,7 +22,7 @@
         <h2>Données reçues :</h2>
         <p>{{ $name }}</p>
         <p>{{ $password }}</p>
-        <p>{!! $commentaire !!}</p>
+        <p>{{ $commentaire }}</p> {{-- Enlever la vulnérabilité XSS --}}
     @endif
 </div>
 
