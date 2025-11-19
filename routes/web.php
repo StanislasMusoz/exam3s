@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 
@@ -18,7 +19,7 @@ Route::get('/',  function () {
     return view('index');
 });
 
-Route::get('/submit', function () {
+Route::post('/submit', function () {
     $name = request("nom");
     $password = request("password");
     $commentaire = request("commentaire");
@@ -28,3 +29,6 @@ Route::get('/submit', function () {
         "commentaire" => $commentaire
     ]);
 });
+
+//Utiliser un controller pour gérer le routage
+Route::resource("controller",Controller::class);
