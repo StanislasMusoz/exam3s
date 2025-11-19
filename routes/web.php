@@ -16,7 +16,7 @@ use App\Http\Controllers\FormController;
 */
 
 Route::get('/',  function () {
-    return view('index');
+    return view('controller.index');
 });
 /*
 Route::post('/submit', function () {
